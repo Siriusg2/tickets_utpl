@@ -1,10 +1,13 @@
-import { Form } from "@/components/ui/form";
 import Image from "next/image";
+import LoginForm from "@/app/components-built-in/loginForm";
 
 export default function Home() {
-  const formSchema = z.object({
-    username: z.string().min(2).max(50),
-    password: z.string().min(2).max(50),
-  });
-  return <Form></Form>;
+  return (
+    <main>
+      <h1 className="text-3xl text-primary-background mt-28 font-semibold text-center">
+        Sistema de tickets UTPL
+      </h1>
+      <LoginForm />
+    </main>
+  );
 }

@@ -6,7 +6,7 @@ FROM oven/bun:latest
 WORKDIR /app
 
 # Copia el archivo package.json y package-lock.json al directorio de trabajo
-COPY package*.json .
+COPY package*.json  bun.lockb ./
 
 # Instala las dependencias de la aplicación
 RUN bun install

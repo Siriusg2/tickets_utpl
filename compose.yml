@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   api:
-    container_name: dashboard
+    container_name: tickets_utpl
     restart: always
     build:
       context: .
@@ -11,8 +9,14 @@ services:
     ports:
       - 3000:3000
     volumes:
+      - ./app:/app/app
+      - ./components:/app/components
+      - ./lib:/app/lib
+      - ./prisma:/app/prisma
+      - ./public:/app/public
+      - ./tailwind.config.ts:/app/tailwind.config.ts
+
       - /app/node_modules
-      - ./src:/app/src
     networks:
       - main
 

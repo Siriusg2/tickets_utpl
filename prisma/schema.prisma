@@ -1,0 +1,73 @@
+datasource db {
+  provider = "postgresql" // Cambia esto al proveedor de base de datos que estás utilizando (por ejemplo, "mysql" o "sqlite")
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  user_id   Int     @id @default(autoincrement())
+  username  String
+  password  String
+  createdAt Int
+  role_id   Int
+  role      Role    @relation(fields: [role_id], references: [role_id])
+  tickets   Ticket[]
+
+  @@map("Users")
+}
+
+model Role {
+  role_id  Int     @id @default(autoincrement())
+  name     String
+  users    User[]
+
+  @@map("Roles")
+}
+
+model Ticket {
+  ticket_id       Int           @id @default(autoincrement())
+  description     String
+  assets_url_1    String?
+  assets_url_2    String?
+  assets_url_3    String?
+  user_id         Int
+  user            User          @relation(fields: [user_id], references: [user_id])
+  nomenclature_id Int
+  nomenclature    Nomenclature  @relation(fields: [nomenclature_id], references: [nomenclature_id])
+  period_id       Int
+  period          Period        @relation(fields: [period_id], references: [period_id])
+  createdAt       Int
+  status_id       Int
+  status          Status        @relation(fields: [status_id], references: [status_id])
+  student_dni     String
+
+  @@map("Tickets")
+}
+
+model Period {
+  period_id  Int      @id @default(autoincrement())
+  name       String
+  createdAt  Int
+  tickets    Ticket[]
+
+  @@map("Period")
+}
+
+model Nomenclature {
+  nomenclature_id  Int      @id @default(autoincrement())
+  name             String
+  tickets          Ticket[]
+
+  @@map("Nomenclatures")
+}
+
+model Status {
+  status_id  Int      @id @default(autoincrement())
+  name             String
+  tickets          Ticket[]
+
+  @@map("Status")
+}

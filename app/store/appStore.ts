@@ -1,6 +1,9 @@
 import { create } from "zustand";
+import { Ticket } from "@/types";
 
 interface AppStore {
-  tickets: [];
+  tickets: Ticket[];
+
+  setTickets: (tickets: []) => void;
 }
 const useStore = create<AppStore>((set) => ({}));

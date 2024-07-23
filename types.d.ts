@@ -15,8 +15,12 @@ export interface Ticket {
   status: Status;
 }
 
+// Asumimos que las interfaces User, Nomenclature, Period y Status ya están definidas.
 export interface User {
   user_id: number;
+  username: string;
+  token: string;
+  // Otras propiedades de User...
 }
 
 export interface Nomenclature {
@@ -27,9 +31,11 @@ export interface Nomenclature {
 export interface Period {
   period_id: number;
   name: string;
+  // Otras propiedades de Period...
 }
 
 export interface Status {
-  name: string;
   status_id: number;
+  name: string;
+  // Otras propiedades de Status...
 }

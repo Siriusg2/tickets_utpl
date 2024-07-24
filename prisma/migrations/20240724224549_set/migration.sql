@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Tickets" ALTER COLUMN "deleted" DROP NOT NULL,
+ALTER COLUMN "deletedAt" DROP NOT NULL;

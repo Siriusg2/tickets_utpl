@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+
 import LoginForm from "@/app/components-built-in/loginForm";
 
 export default function Home() {

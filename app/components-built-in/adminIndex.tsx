@@ -46,8 +46,6 @@ export default function AdminIndex() {
                     <Input type="text" placeholder="Buscar" />
                     <Button type="submit">Buscar</Button>
                 </div>
-                <SelectIndex placeholder="Tipo de Solicitud" />
-                <SelectIndex placeholder="Tipo de Prioridad" />
             </div>
             <Table>
                 <TableHeader>
@@ -87,3 +85,5 @@ export default function AdminIndex() {
         </div>
     );
 }
+
+

@@ -39,3 +39,9 @@ export interface Status {
   name: string;
   // Otras propiedades de Status...
 }
+
+export interface Statuses  {
+  value: string
+  label: string
+}
+

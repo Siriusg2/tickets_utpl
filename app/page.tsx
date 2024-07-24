@@ -1,6 +1,7 @@
 import Image from "next/image";
 import LoginForm from "@/app/components-built-in/loginForm";
 import AdminIndex from "./components-built-in/adminIndex";
+import AdminIndex2 from "./components-built-in/adminIndex2";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
         Sistema de tickets UTPL
       </h1>
       {/* <LoginForm/> */}
-      <AdminIndex/>
+      <AdminIndex2/>
     </main>
   );
 }

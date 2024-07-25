@@ -11,8 +11,10 @@ model User {
   user_id   Int     @id @default(autoincrement())
   username  String
   password  String
-  createdAt Int
+  createdAt BigInt
   role_id   Int
+  deleted   Boolean?
+  deletedAt BigInt?
   role      Role    @relation(fields: [role_id], references: [role_id])
   tickets   Ticket[]
 
@@ -39,10 +41,14 @@ model Ticket {
   nomenclature    Nomenclature  @relation(fields: [nomenclature_id], references: [nomenclature_id])
   period_id       Int
   period          Period        @relation(fields: [period_id], references: [period_id])
-  createdAt       Int
+  createdAt       BigInt
   status_id       Int
   status          Status        @relation(fields: [status_id], references: [status_id])
+  priority_id     Int
+  priority        Priority        @relation(fields: [priority_id], references: [priority_id])
   student_dni     String
+  deleted         Boolean?
+  deletedAt       BigInt?
 
   @@map("Tickets")
 }
@@ -50,15 +56,27 @@ model Ticket {
 model Period {
   period_id  Int      @id @default(autoincrement())
   name       String
-  createdAt  Int
+  active     Boolean
+  createdAt  BigInt
+
   tickets    Ticket[]
 
   @@map("Period")
 }
 
+model Priority {
+  priority_id  Int      @id @default(autoincrement())
+  name       String
+  tickets    Ticket[]
+
+  @@map("Priority")
+}
+
 model Nomenclature {
   nomenclature_id  Int      @id @default(autoincrement())
   name             String
+  deleted   Boolean?
+  deletedAt BigInt?
   tickets          Ticket[]
 
   @@map("Nomenclatures")
@@ -67,6 +85,7 @@ model Nomenclature {
 model Status {
   status_id  Int      @id @default(autoincrement())
   name             String
+  
   tickets          Ticket[]
 
   @@map("Status")

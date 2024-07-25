@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
   username: z
@@ -29,6 +30,8 @@ const formSchema = z.object({
 });
 
 export default function LoginForm() {
+  const router = useRouter()
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,6 +43,7 @@ export default function LoginForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    router.push("/forms/ticketsForm");
   }
 
   return (
@@ -77,7 +81,7 @@ export default function LoginForm() {
           )}
         />
         <Button className="text-primary-background" type="submit">
-          ingresar
+          Enviar
         </Button>
       </form>
     </Form>

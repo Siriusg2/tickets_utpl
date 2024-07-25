@@ -5,13 +5,13 @@ export interface Ticket {
   assets_url_2?: string | null;
   assets_url_3?: string | null;
   user_id: number;
-  user: User;
   nomenclature_id: number;
-  nomenclature: Nomenclature;
   period_id: number;
-  period: Period;
   createdAt: number;
   status_id: number;
+  user: User;
+  nomenclature: Nomenclature;
+  period: Period;
   status: Status;
 }
 

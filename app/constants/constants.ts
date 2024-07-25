@@ -21,15 +21,15 @@ export const statuses: Statuses[] = [
 
 export const priorities: Statuses[] = [
     {
-      value: "media",
+      value: "Baja",
+      label: "Baja",
+    },
+    {
+      value: "Media",
       label: "Media",
     },
     {
-      value: "alta",
+      value: "Alta",
       label: "Alta",
-    },
-    {
-      value: "baja",
-      label: "Baja",
     },
   ]

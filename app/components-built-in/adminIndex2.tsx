@@ -338,6 +338,7 @@ export default function AdminIndex2() {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
+                
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

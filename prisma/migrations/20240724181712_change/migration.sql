@@ -1,0 +1,8 @@
+-- AlterTable
+ALTER TABLE "Period" ALTER COLUMN "createdAt" SET DATA TYPE BIGINT;
+
+-- AlterTable
+ALTER TABLE "Tickets" ALTER COLUMN "createdAt" SET DATA TYPE BIGINT;
+
+-- AlterTable
+ALTER TABLE "Users" ALTER COLUMN "createdAt" SET DATA TYPE BIGINT;

@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+
 import LoginForm from "@/app/components-built-in/loginForm";
 import AdminIndex from "./components-built-in/adminIndex";
 import AdminIndex2 from "./components-built-in/adminIndex2";

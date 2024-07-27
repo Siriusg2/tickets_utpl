@@ -13,6 +13,7 @@ export interface Ticket {
   nomenclature: Nomenclature;
   period: Period;
   status: Status;
+  priority: Priority
 }
 
 // Asumimos que las interfaces User, Nomenclature, Period y Status ya están definidas.
@@ -22,7 +23,10 @@ export interface User {
   token: string;
   // Otras propiedades de User...
 }
-
+export interface Priority {
+  priority_id: number;
+  name: string;
+}
 export interface Nomenclature {
   nomenclature_id: number;
   name: string;

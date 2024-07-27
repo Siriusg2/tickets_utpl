@@ -10,13 +10,15 @@ const useStore = create<AppStore>((set, get) => ({
   tickets: [
     {
       ticket_id: 849,
-      prioridad: 'Alta',
       description: "A Se rompio algo en un lugar",
       createdAt: 20 ,
       status_id: 1,
       period_id: 1,
       nomenclature_id: 1,
-      // user: "ken99@yahoo.com",
+      priority: {
+        priority_id: 1,
+        name: 'Alta'
+      },
       user_id: 1,
       user: {
         user_id: 1,
@@ -37,53 +39,97 @@ const useStore = create<AppStore>((set, get) => ({
       },
     },
     {
-      ticket_id: "3u1reuv4",
-      prioridad: 'Baja',
-      status: "Cerrado",
-      asunto: "Ampliación de fecha para postular a beca",
+      ticket_id: 84,
+      nomenclature_id: 2,
+      priority: {
+        priority_id: 2,
+        name: 'Baja'
+      },  
       description: "B Se rompio algo en un lugar",
-      createdAt: '1 mes',
+      createdAt: 200,
       status_id: 2,
       period_id: 2,
-      user: "Abe45@gmail.com",
       user_id: 2,
+      user: {
+        user_id: 2,
+        username: "Abe45@gmail.com",
+        token: 'string'
+      },
+      status: {
+        status_id:2,
+        name:"Cerrado",
+      },
+      nomenclature: {
+        nomenclature_id: 2,
+        name: 'Ampliación de fecha para postular a beca',
+      },
+      period: {
+        period_id: 1,
+        name: 'Period',
+      },
     },
     {
-      ticket_id: "derv1ws0",
-      prioridad: 'Media',
-      status: "Cerrado",
-      asunto: "Ampliación de fecha para postular a beca",
+      ticket_id: 8,
+      nomenclature_id: 3,
+      priority: {
+        priority_id: 3,
+        name: 'Media'
+      },       
+      status: {
+        status_id:3,
+        name:"Cerrado",
+      },      
+      nomenclature: {
+        nomenclature_id: 3,
+        name: 'Ampliación de fecha para postular a beca',
+      },
       description: "C Se rompio algo en un lugar",
-      createdAt: "3 horas",
+      createdAt: 3,
       status_id: 3,
       period_id: 3,
-      user: "Monserrat44@gmail.com",
+      user: {
+        user_id: 3,
+        username: "Monserrat44@gmail.com",
+        token: 'string'
+      },
+      period: {
+        period_id: 3,
+        name: 'Period',
+      },
       user_id:3,
     },
     {
-      ticket_id: "5kma53ae",
-      prioridad: 'Alta',
-      status: "Pendiente",
-      asunto: "No se puede realizar orden de pago",
+      ticket_id: 42,
+      nomenclature_id: 4,
+      priority: {
+        priority_id: 4,
+        name: 'Alta'
+      },  
       description: "D Se rompio algo en un lugar",
-      createdAt: '3 dias',
+      createdAt: 72,
       status_id: 4,
       period_id: 4,
-      user: "Silas22@gmail.com",
       user_id: 4,
-    },
-    {
-      ticket_id: "bhqecj4p",
-      prioridad: 'Alta',
-      status: "En proceso",
-      asunto: "No recibe correo para reiniciar la contraseña",
-      description: "E Se rompio algo en un lugar",
-      createdAt: '1 semana',
-      status_id: 5,
-      period_id: 5,
-      user: "carmella@hotmail.com",
-      user_id: 5,
+      nomenclature: {
+        nomenclature_id: 3,
+        name: 'No se puede realizar orden de pago',
+      },
+      user: {
+        user_id: 3,
+        username: "Silas22@gmail.com",
+        token: 'string'
+      },
+      status: {
+        status_id:4,
+        name:"Pendiente",
+      }, 
+      period: {
+        period_id: 4,
+        name: 'Period',
+      },
     },
   ],
-  setTickets: ticket => set({ticket})
-}));
+  setTickets: tickets => set({tickets}),
+  }));
+
+export default useStore;
